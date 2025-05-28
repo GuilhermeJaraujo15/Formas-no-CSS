@@ -1,0 +1,288 @@
+* body {
+  background: linear-gradient(#333, #111);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.paisagem {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.predio {
+  position: absolute;
+  bottom: 0;
+  background: #444;
+  border: 2px solid #666;
+}
+
+.predio.um {
+  left: 5%;
+  width: 60px;
+  height: 200px;
+}
+
+.predio.dois {
+  left: 15%;
+  width: 40px;
+  height: 150px;
+}
+
+.predio.tres {
+  left: 25%;
+  width: 50px;
+  height: 180px;
+}
+
+.predio.quatro {
+  left: 35%;
+  width: 70px;
+  height: 220px;
+}
+
+.predio.cinco {
+  left: 50%;
+  width: 50px;
+  height: 160px;
+}
+
+.predio.seis {
+  left: 60%;
+  width: 60px;
+  height: 210px;
+}
+
+.predio.sete {
+  left: 75%;
+  width: 50px;
+  height: 190px;
+}
+
+.poste {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 150px;
+  background: #ccc;
+  z-index: 0;
+}
+
+.poste::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 30px;
+  height: 10px;
+  background: #ff0;
+  border-radius: 5px;
+}
+
+.poste.um {
+  left: 10%;
+}
+
+.poste.dois {
+  left: 40%;
+}
+
+.poste.tres {
+  left: 70%;
+}
+
+.nuvem {
+  position: absolute;
+  background: #eee;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.nuvem1 {
+  top: 50px;
+  left: 20%;
+  width: 60px;
+  height: 60px;
+}
+
+.nuvem2 {
+  top: 80px;
+  left: 50%;
+  width: 80px;
+  height: 50px;
+}
+
+.nuvem3 {
+  top: 40px;
+  left: 75%;
+  width: 70px;
+  height: 60px;
+}
+
+.estrada {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: #222;
+  border-top: 4px solid #555;
+  z-index: 0;
+}
+
+.linha {
+  position: absolute;
+  bottom: 45px;
+  width: 40px;
+  height: 6px;
+  background: #fff;
+  z-index: 1;
+}
+
+.linha.um {
+  left: 20%;
+}
+
+.linha.dois {
+  left: 40%;
+}
+
+.linha.tres {
+  left: 60%;
+}
+
+.linha.quatro {
+  left: 80%;
+}
+
+.carro {
+  position: relative;
+  width: 400px;
+  height: 150px;
+  background: #f00;
+  border-radius: 20px 20px 10px 10px;
+  z-index: 2;
+  animation: moverCarro 5s linear infinite;
+}
+
+@keyframes moverCarro {
+  0% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.teto {
+  position: absolute;
+  top: -40px;
+  left: 60px;
+  width: 280px;
+  height: 40px;
+  background: #c00;
+  clip-path: polygon(10% 100%, 30% 0%, 70% 0%, 90% 100%);
+}
+
+
+
+
+.roda {
+  position: absolute;
+  bottom: -30px;
+  width: 60px;
+  height: 60px;
+  background: #333;
+  border: 6px solid #999;
+  border-radius: 50%;
+  animation: girarRoda 1s linear infinite;
+}
+
+@keyframes girarRoda {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.roda.esquerda {
+  left: 40px;
+}
+
+.roda.direita {
+  right: 40px;
+}
+
+.farol {
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 10px;
+  background: yellow;
+  border-radius: 5px;
+}
+
+.farol.frente {
+  right: -10px;
+}
+
+.para-choque {
+  position: absolute;
+  bottom: 0;
+  height: 20px;
+  background: #444;
+}
+
+.para-choque.frente {
+  right: -20px;
+  width: 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+.para-choque.tras {
+  left: -20px;
+  width: 20px;
+  border-radius: 5px 0 0 5px;
+}
+
+.fumaça {
+  position: absolute;
+  bottom: 10px;
+  left: -40px;
+  width: 20px;
+  height: 20px;
+  background: rgba(200, 200, 200, 0.5);
+  border-radius: 50%;
+  animation: subirFumaca 2s infinite ease-in-out;
+}
+
+@keyframes subirFumaca {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-50px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.aerofolio {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 60px;
+  height: 10px;
+  background: #111;
+  border-radius: 5px;
+}

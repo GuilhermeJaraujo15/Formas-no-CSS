@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Principal - Formas</title>
+  <style>
+    /* Reset simples */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background: #415b6b;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eee;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 960px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    a.card {
+      background: #232337;
+      border-radius: 12px;
+      padding: 25px 20px;
+      color: #20b8bd;
+      text-decoration: none;
+      box-shadow: 0 0 20px #7166b1aa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    a.card:hover {
+      background-color: #15bac6;
+      color: #12121e;
+      box-shadow: 0 0 30px #a84bd6dd;
+    }
+    a.card h2 {
+      margin: 0 0 12px;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    a.card p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
+      color: inherit;
+      opacity: 0.8;
+    }
+    @media (max-width: 400px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <h1>Formas no CSS</h1>
+    <a href="carro.html" class="card">
+      <h2>Carro</h2>
+      <p>Visualize um design simples e estilizado de um carro criado somente com CSS.</p>
+    </a>
+    <a href="robô.html" class="card">
+      <h2>Robô</h2>
+      <p>Explore a forma de um robô com detalhes minimalistas e estilo moderno em CSS.</p>
+    </a>
+    <a href="music.html" class="card">
+      <h2>Player</h2>
+      <p>Veja um player estilizado, demonstrando componentes visuais em CSS puro.</p>
+    </a>
+    <a href="grafico.html" class="card">
+      <h2>Gráfico</h2>
+      <p>Um gráfico animado em barras feito com HTML e CSS, com cores vibrantes.</p>
+    </a>
+    <a href="padrao.html" class="card">
+      <h2>Padrão Decorativo</h2>
+      <p>Um padrão decorativo complexo criado com polígonos e gradientes em CSS.</p>
+    </a>
+  </main>
+</body>
+</html>

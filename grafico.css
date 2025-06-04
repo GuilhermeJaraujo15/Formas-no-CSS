@@ -1,4 +1,4 @@
-* body {
+  * body {
     font-family: Arial, sans-serif;
     background: #1e1e2f;
     color: #eee;
@@ -6,88 +6,90 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    min-height: 95vh;
     margin: 0;
     padding: 10px;
-}
+    box-sizing: border-box;
+  }
 
-.grafico-container {
-    width: 80%;
+  .grafico-container {
+    width: 90%;
     max-width: 800px;
-}
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
 
-.grafico {
+  .grafico {
     display: flex;
     gap: 20px;
     align-items: flex-end;
     border-left: 2px solid #bbb;
     border-bottom: 2px solid #bbb;
-    padding-bottom: 0, 5px;
+    padding-bottom: 5px;
     position: relative;
     height: 220px;
-    width: 800px;
-}
+    width: 100%;
+    min-width: 600px;
+  }
 
-.barra {
+  .barra {
     position: relative;
     width: 60px;
     border-radius: 6px 6px 0 0;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
     transform-origin: bottom;
     animation: crescer 1.5s ease forwards;
-}
+    flex-shrink: 0;
+  }
 
-
-@keyframes crescer {
+  @keyframes crescer {
     0% {
-        transform: scaleY(0);
-        opacity: 0.5;
+      transform: scaleY(0);
+      opacity: 0.5;
     }
-
     100% {
-        transform: scaleY(1);
-        opacity: 1;
+      transform: scaleY(1);
+      opacity: 1;
     }
-}
+  }
 
-.barra.vendas {
+  .barra.vendas {
     background: linear-gradient(180deg, #ff7e5f, #feb47b);
     height: 90px;
     animation-delay: 0.6s;
-}
+  }
 
-.barra.lucro {
+  .barra.lucro {
     background: linear-gradient(180deg, #43cea2, #185a9d);
     height: 120px;
     animation-delay: 1.2s;
-}
+  }
 
-.barra.despesas {
+  .barra.despesas {
     background: linear-gradient(180deg, #f7971e, #ffd200);
     height: 40px;
     animation-delay: .8s;
-}
+  }
 
-.barra.clientes {
+  .barra.clientes {
     background: linear-gradient(180deg, #6a11cb, #2575fc);
     height: 60px;
     animation-delay: 1s;
-}
+  }
 
-.barra.receita-bruta {
+  .barra.receita-bruta {
     background: linear-gradient(180deg, #c82dd6, #5a446d);
-    height: 210px;
+    height: 189px;
     animation-delay: 0.2s;
-}
+  }
 
-.barra.receita-liquida {
+  .barra.receita-liquida {
     background: linear-gradient(180deg, #28d3b4, #3c7168);
     height: 160px;
     animation-delay: 0.4s;
-}
+  }
 
-
-.valor {
+  .valor {
     position: absolute;
     top: -28px;
     width: 100%;
@@ -97,51 +99,94 @@
     font-size: 14px;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
     user-select: none;
-}
+  }
 
-.legenda {
+  .legenda {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-top: 30px;
-}
+    max-width: 800px;
+    padding: 0 20px;
+  }
 
-.item-legend {
+  .item-legend {
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: bold;
     color: #ddd;
     font-size: 14px;
-}
+    flex-shrink: 0;
+  }
 
-.cor-legend {
+  .cor-legend {
     width: 20px;
     height: 20px;
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
+  }
 
-.cor-vendas {
+  .cor-vendas {
     background: linear-gradient(180deg, #ff7e5f, #feb47b);
-}
+  }
 
-.cor-lucro {
+  .cor-lucro {
     background: linear-gradient(180deg, #43cea2, #185a9d);
-}
+  }
 
-.cor-despesas {
+  .cor-despesas {
     background: linear-gradient(180deg, #f7971e, #ffd200);
-}
+  }
 
-.cor-clientes {
+  .cor-clientes {
     background: linear-gradient(180deg, #6a11cb, #2575fc);
-}
+  }
 
-.cor-receita-bruta {
+  .cor-receita-bruta {
     background: linear-gradient(180deg, #c82dd6, #5a446d);
-}
+  }
 
-.cor-receita-liquida {
+  .cor-receita-liquida {
     background: linear-gradient(180deg, #28d3b4, #3c7168);
-}
+  }
+
+  @media (max-width: 768px) {
+    .grafico {
+      gap: 15px;
+    }
+    
+    .barra {
+      width: 50px;
+    }
+    
+    .legenda {
+      gap: 10px;
+    }
+    
+    .item-legend {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grafico {
+      gap: 10px;
+      min-width: 500px;
+    }
+    
+    .barra {
+      width: 40px;
+    }
+    
+    .valor {
+      font-size: 12px;
+      top: -24px;
+    }
+    
+    .legenda {
+      gap: 8px;
+      justify-content: flex-start;
+    }
+  }

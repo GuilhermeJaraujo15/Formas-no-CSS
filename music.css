@@ -1,235 +1,275 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.player {
-    background: #1e1e2f;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 320px;
-}
-
-.tela-musica {
-    width: 100%;
-    height: 180px;
-    background: linear-gradient(135deg, #ff00cc, #3333ff);
-    border-radius: 15px;
-    margin-bottom: 20px;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 3px;
-    padding-bottom: 20px;
-}
-
-
-.barra {
-    width: 6px;
-    background: linear-gradient(to top, #00ff87, #60efff);
-    border-radius: 3px;
-    animation-name: pulse;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-.barra:nth-child(1) {
-    height: 30px;
-    animation-duration: 1.2s;
-    animation-delay: 0s;
-}
-
-.barra:nth-child(2) {
-    height: 40px;
-    animation-duration: 1.4s;
-    animation-delay: 0.15s;
-}
-
-.barra:nth-child(3) {
-    height: 35px;
-    animation-duration: 1.1s;
-    animation-delay: 0.3s;
-}
-
-.barra:nth-child(4) {
-    height: 50px;
-    animation-duration: 1.3s;
-    animation-delay: 0.45s;
-}
-
-.barra:nth-child(5) {
-    height: 45px;
-    animation-duration: 1.5s;
-    animation-delay: 0.6s;
-}
-
-.barra:nth-child(6) {
-    height: 40px;
-    animation-duration: 1.2s;
-    animation-delay: 0.75s;
-}
-
-.barra:nth-child(7) {
-    height: 30px;
-    animation-duration: 1.4s;
-    animation-delay: 0.9s;
-}
-
-.barra:nth-child(8) {
-    height: 50px;
-    animation-duration: 1.3s;
-    animation-delay: 1.05s;
-}
-
-.barra:nth-child(9) {
-    height: 35px;
-    animation-duration: 1.1s;
-    animation-delay: 1.2s;
-}
-
-.barra:nth-child(10) {
-    height: 40px;
-    animation-duration: 1.5s;
-    animation-delay: 1.35s;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scaleY(1);
-        opacity: 1;
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
-    50% {
-        transform: scaleY(2.5);
-        opacity: 0.6;
+    .player {
+        background: #1e1e2f;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 320px;
     }
 
-    100% {
-        transform: scaleY(1);
-        opacity: 1;
+    .tela-musica {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, #ff00cc, #3333ff);
+        border-radius: 15px;
+        margin-bottom: 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 3px;
+        padding-bottom: 20px;
     }
-}
 
-.barra-progresso {
-    width: 100%;
-    height: 10px;
-    background: #555;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
+    .barra {
+        width: 6px;
+        background: linear-gradient(to top, #00ff87, #60efff);
+        border-radius: 3px;
+        animation-name: pulse;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        flex-shrink: 0;
+    }
 
-.progresso {
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(to right, #00ff87, #60efff);
-    transition: width 0.3s ease;
-}
+    .barra:nth-child(1) {
+        height: 30px;
+        animation-duration: 1.2s;
+        animation-delay: 0s;
+    }
 
-.controles {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: 15px 0;
-}
+    .barra:nth-child(2) {
+        height: 40px;
+        animation-duration: 1.4s;
+        animation-delay: 0.15s;
+    }
 
-.botao {
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle at 30% 30%, #00fff7, #004b91);
-    clip-path: circle(50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    box-shadow: 0 0 10px #00fff7;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    user-select: none;
-    line-height: 1;
-    text-align: center;
+    .barra:nth-child(3) {
+        height: 35px;
+        animation-duration: 1.1s;
+        animation-delay: 0.3s;
+    }
 
-}
+    .barra:nth-child(4) {
+        height: 50px;
+        animation-duration: 1.3s;
+        animation-delay: 0.45s;
+    }
 
+    .barra:nth-child(5) {
+        height: 45px;
+        animation-duration: 1.5s;
+        animation-delay: 0.6s;
+    }
 
-.botao:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00fff7;
-}
+    .barra:nth-child(6) {
+        height: 40px;
+        animation-duration: 1.2s;
+        animation-delay: 0.75s;
+    }
 
-.controle-volume {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+    .barra:nth-child(7) {
+        height: 30px;
+        animation-duration: 1.4s;
+        animation-delay: 0.9s;
+    }
 
-.slider {
+    .barra:nth-child(8) {
+        height: 50px;
+        animation-duration: 1.3s;
+        animation-delay: 1.05s;
+    }
 
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #ff8a00, #e52e71);
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
+    .barra:nth-child(9) {
+        height: 35px;
+        animation-duration: 1.1s;
+        animation-delay: 1.2s;
+    }
 
-}
+    .barra:nth-child(10) {
+        height: 40px;
+        animation-duration: 1.5s;
+        animation-delay: 1.35s;
+    }
 
-.slider:hover {
-    background: linear-gradient(to right, #ffa500, #ff007f);
-}
+    @keyframes pulse {
+        0% {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scaleY(2.5);
+            opacity: 0.6;
+        }
+        100% {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
 
-.icone-volume {
-    color: white;
-    font-size: 18px;
-    user-select: none;
-}
+    .barra-progresso {
+        width: 100%;
+        height: 10px;
+        background: #555;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
 
-.playlist {
-    width: 100%;
-    color: white;
-    font-size: 14px;
-    max-height: 120px;
-    overflow-y: auto;
-}
+    .progresso {
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(to right, #00ff87, #60efff);
+        transition: width 0.3s ease;
+    }
 
-.playlist h3 {
-    margin: 10px 0;
-    text-align: center;
-    font-size: 16px;
-}
+    .controles {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 15px 0;
+    }
 
-.playlist ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    .botao {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle at 30% 30%, #00fff7, #004b91);
+        clip-path: circle(50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        box-shadow: 0 0 10px #00fff7;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        user-select: none;
+        line-height: 1;
+        text-align: center;
+    }
 
-.playlist li {
-    padding: 5px 10px;
-    background: rgba(255, 255, 255, 0.05);
-    margin-bottom: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    user-select: none;
-}
+    .botao:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #00fff7;
+    }
 
-.playlist li:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
+    .controle-volume {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .slider {
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #ff8a00, #e52e71);
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .slider:hover {
+        background: linear-gradient(to right, #ffa500, #ff007f);
+    }
+
+    .icone-volume {
+        color: white;
+        font-size: 18px;
+        user-select: none;
+        flex-shrink: 0;
+    }
+
+    .playlist {
+        width: 100%;
+        color: white;
+        font-size: 14px;
+        max-height: 120px;
+        overflow-y: auto;
+    }
+
+    .playlist h3 {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .playlist ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .playlist li {
+        padding: 5px 10px;
+        background: rgba(255, 255, 255, 0.05);
+        margin-bottom: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .playlist li:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    @media (max-width: 400px) {
+        .player {
+            padding: 20px;
+        }
+        
+        .botao {
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+        }
+        
+        .playlist {
+            font-size: 13px;
+        }
+        
+        .playlist h3 {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 350px) {
+        .player {
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .tela-musica {
+            height: 160px;
+            margin-bottom: 15px;
+        }
+        
+        .botao {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+        
+        .controle-volume {
+            margin-bottom: 15px;
+        }
+    }

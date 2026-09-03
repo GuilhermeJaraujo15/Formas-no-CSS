@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interface de Música com Animação CSS</title>
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="lang-switcher.css">
+</head>
+
+<body>
+    <div class="language-switcher" role="group" aria-label="Seletor de idioma">
+        <button id="language-menu-toggle" class="language-pill language-caret-btn" type="button" aria-label="Abrir seleção de idioma" aria-expanded="false">
+            <span id="language-current-flag" class="language-flag" aria-hidden="true"></span>
+            <span id="language-current-label" class="language-label">Português</span>
+            <span class="language-caret" aria-hidden="true"></span>
+        </button>
+        <div id="language-dropdown" class="language-dropdown" role="menu" aria-label="Escolher idioma">
+            <button id="language-alt-option" class="language-option-item" type="button" role="menuitem">
+                <span id="language-alt-flag" class="language-flag" aria-hidden="true"></span>
+                <span id="language-alt-label">English</span>
+            </button>
+        </div>
+    </div>
+    <div class="player">
+        <div class="tela-musica">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+        </div>
+        <div class="barra-progresso">
+            <div class="progresso"></div>
+        </div>
+        <div class="controles">
+            <div class="botao" title="Anterior" data-i18n-attr="music.controls.previous:title">⏮</div>
+            <div class="botao" title="Play/Pause" data-i18n-attr="music.controls.playPause:title">▶</div>
+            <div class="botao" title="Próxima" data-i18n-attr="music.controls.next:title">⏭</div>
+        </div>
+        <div class="controle-volume">
+            <div class="icone-volume">🔊</div>
+            <input type="range" class="slider" min="0" max="100" value="50" />
+        </div>
+        <div class="playlist">
+            <h3 data-i18n="music.playlist.title">Playlist</h3>
+            <ul>
+                <li data-i18n="music.playlist.m1">Música 1 - Artista A</li>
+                <li data-i18n="music.playlist.m2">Música 2 - Artista B</li>
+                <li data-i18n="music.playlist.m3">Música 3 - Artista C</li>
+                <li data-i18n="music.playlist.m4">Música 4 - Artista D</li>
+            </ul>
+        </div>
+    </div>
+    <script src="i18n.js" defer></script>
+</body>
+
+</html>

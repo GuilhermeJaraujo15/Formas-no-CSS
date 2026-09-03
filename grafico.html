@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gráfico de Barras CSS Animado</title>
+  <link rel="stylesheet" href="grafico.css">
+  <link rel="stylesheet" href="lang-switcher.css">
+</head>
+
+<body>
+  <div class="language-switcher" role="group" aria-label="Seletor de idioma">
+    <button id="language-menu-toggle" class="language-pill language-caret-btn" type="button" aria-label="Abrir seleção de idioma" aria-expanded="false">
+      <span id="language-current-flag" class="language-flag" aria-hidden="true"></span>
+      <span id="language-current-label" class="language-label">Português</span>
+      <span class="language-caret" aria-hidden="true"></span>
+    </button>
+    <div id="language-dropdown" class="language-dropdown" role="menu" aria-label="Escolher idioma">
+      <button id="language-alt-option" class="language-option-item" type="button" role="menuitem">
+        <span id="language-alt-flag" class="language-flag" aria-hidden="true"></span>
+        <span id="language-alt-label">English</span>
+      </button>
+    </div>
+  </div>
+  <div class="grafico-container">
+    <div class="grafico">
+      <div class="barra receita-bruta">
+        <div class="valor">R$500</div>
+      </div>
+      <div class="barra receita-liquida">
+        <div class="valor">R$410</div>
+      </div>
+      <div class="barra vendas">
+        <div class="valor">R$160</div>
+      </div>
+      <div class="barra despesas">
+        <div class="valor">R$90</div>
+      </div>
+      <div class="barra clientes">
+        <div class="valor">R$130</div>
+      </div>
+      <div class="barra lucro">
+        <div class="valor">R$320</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legenda">
+    <div class="item-legend">
+      <div class="cor-legend cor-receita-bruta"></div> <span data-i18n="chart.legend.grossRevenue">Receita Bruta</span>
+    </div>
+    <div class="item-legend">
+      <div class="cor-legend cor-receita-liquida"></div> <span data-i18n="chart.legend.netRevenue">Receita Líquida</span>
+    </div>
+    <div class="item-legend">
+      <div class="cor-legend cor-vendas"></div> <span data-i18n="chart.legend.sales">Vendas</span>
+    </div>
+    <div class="item-legend">
+      <div class="cor-legend cor-despesas"></div> <span data-i18n="chart.legend.expenses">Despesas</span>
+    </div>
+    <div class="item-legend">
+      <div class="cor-legend cor-clientes"></div> <span data-i18n="chart.legend.clients">Clientes</span>
+    </div>
+    <div class="item-legend">
+      <div class="cor-legend cor-lucro"></div> <span data-i18n="chart.legend.profit">Lucro</span>
+    </div>
+  </div>
+  <script src="i18n.js" defer></script>
+</body>
+
+</html>

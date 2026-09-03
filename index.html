@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Principal - Formas CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lang-switcher.css">
+</head>
+
+<body>
+  <div class="language-switcher" role="group" aria-label="Seletor de idioma">
+    <button id="language-menu-toggle" class="language-pill language-caret-btn" type="button" aria-label="Abrir seleção de idioma" aria-expanded="false">
+      <span id="language-current-flag" class="language-flag" aria-hidden="true"></span>
+      <span id="language-current-label" class="language-label">Português</span>
+      <span class="language-caret" aria-hidden="true"></span>
+    </button>
+    <div id="language-dropdown" class="language-dropdown" role="menu" aria-label="Escolher idioma">
+      <button id="language-alt-option" class="language-option-item" type="button" role="menuitem">
+        <span id="language-alt-flag" class="language-flag" aria-hidden="true"></span>
+        <span id="language-alt-label">English</span>
+      </button>
+    </div>
+  </div>
+  <div class="main-container">
+    <header class="header">
+      <h1 data-i18n="index.headerTitle">Formas com CSS</h1>
+      <p data-i18n="index.headerDesc">Explore uma coleção de designs feitos puramente com CSS, demonstrando as mais diversas possibilidades visuais!</p>
+    </header>
+    
+    <div class="cards-grid">
+      <a href="carro.html" class="card">
+        <h2 data-i18n="index.cards.car.title">Carro</h2>
+        <p data-i18n="index.cards.car.desc">Design minimalista de um veículo criado somente com CSS, utilizando propriedades de transformação e gradientes.</p>
+
+      </a>
+      
+      <a href="robô.html" class="card">
+        <h2 data-i18n="index.cards.robot.title">Robô</h2>
+        <p data-i18n="index.cards.robot.desc">Composição de um robô com elementos geométricos e detalhes criados através de pseudo-elementos e box-shadows.</p>
+
+      </a>
+      
+      <a href="music.html" class="card">
+        <h2 data-i18n="index.cards.player.title">Player</h2>
+        <p data-i18n="index.cards.player.desc">Interface de player de música estilizada com CSS moderno, incluindo controles e indicadores visuais.</p>
+
+      </a>
+      
+      <a href="grafico.html" class="card">
+        <h2 data-i18n="index.cards.chart.title">Gráfico</h2>
+        <p data-i18n="index.cards.chart.desc">Visualização de dados em formato de barras animadas, implementada sem JavaScript.</p>
+
+      </a>
+      
+      <a href="padrao.html" class="card">
+        <h2 data-i18n="index.cards.pattern.title">Padrão Decorativo</h2>
+        <p data-i18n="index.cards.pattern.desc">Composição complexa utilizando gradientes, padrões de fundo e polígonos CSS para criar texturas visuais.</p>
+      </a>
+    </div>
+  </div>
+  <script src="i18n.js" defer></script>
+</body>
+</html>
